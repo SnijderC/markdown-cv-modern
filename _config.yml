@@ -1,0 +1,6 @@
+markdown: kramdown
+style:  snijderc
+sass:
+    sass_dir: static/styles/_sass
+plugins:
+  - jemoji

@@ -1,0 +1,18 @@
+@mixin font-face($weight-name, $weight) {
+  @font-face {
+    font-family: "rubik-#{$weight-name}";
+    src: url("/static/fonts/rubik-#{$weight-name}.woff2") format("woff2");
+    font-style: normal;
+    font-weight: $weight;
+  }
+}
+
+$weigths: (
+  light: 100,
+  regular: 300,
+  bold: 500
+);
+
+@each $weight-name, $weight in $weigths {
+  @include font-face($weight-name, $weight);
+}
