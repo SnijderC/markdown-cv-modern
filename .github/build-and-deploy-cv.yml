@@ -1,0 +1,38 @@
+name: Build, convert to PDF and deploy both to website
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: jekyll/jekyll:4
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build CV site
+        run: jekyll build -s src -d build
+      - name: Upload build dir
+        uses: actions/upload-artifact@v1
+        with:
+          name: build
+          path: build
+
+  # htmltopdf:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: echo Hello World
+  rsync:
+    needs:
+      - build
+      - htmltopdf
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve SSH key and user
+        env:
+          SSH_KEY: ${{ secrets.SSH_GH_PUBLISH_KEY }}
+          SSH_USER: ${{ secrets.SSH_GH_PUBLISH_USER }}
+      - name: Deploy CV site
+        with:
+          name: build
+        run: ./deploy.sh
