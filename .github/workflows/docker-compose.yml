@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  cv:
+    image: jekyll/jekyll:4
+    ports:
+    - 4000:4000
+    - 35729:35729
+    container_name: cv
+    command: jekyll serve --livereload
+    volumes:
+      - ./src:/srv/jekyll
+      - ./build:/build
