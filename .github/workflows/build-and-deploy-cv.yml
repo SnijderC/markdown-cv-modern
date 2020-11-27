@@ -28,11 +28,11 @@ jobs:
       - htmltopdf
     runs-on: ubuntu-latest
     steps:
-      - name: Retrieve SSH key and user
-        env:
-          SSH_KEY: ${{ secrets.SSH_GH_PUBLISH_KEY }}
-          SSH_USER: ${{ secrets.SSH_GH_PUBLISH_USER }}
       - name: Deploy CV site
         with:
           name: build
+        if: env.SSH_USER !== ""
         run: ./deploy.sh
+        env:
+          SSH_KEY: ${{ secrets.SSH_GH_PUBLISH_KEY }}
+          SSH_USER: ${{ secrets.SSH_GH_PUBLISH_USER }}
