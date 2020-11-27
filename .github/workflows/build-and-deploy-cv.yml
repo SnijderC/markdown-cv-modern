@@ -22,17 +22,16 @@ jobs:
   #   runs-on: ubuntu-latest
   #   steps:
   #     - run: echo Hello World
-  rsync:
-    needs:
-      - build
-      - htmltopdf
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy CV site
-        with:
-          name: build
-        if: env.SSH_USER !== ""
-        run: ./deploy.sh
-        env:
-          SSH_KEY: ${{ secrets.SSH_GH_PUBLISH_KEY }}
-          SSH_USER: ${{ secrets.SSH_GH_PUBLISH_USER }}
+  # rsync:
+  #   runs-on: ubuntu-latest
+  #   needs:
+  #     - build
+  #     # - htmltopdf
+  #   steps:
+  #     - name: Deploy CV site
+  #       with:
+  #         name: build
+  #       run: ./deploy.sh
+  #       env:
+  #         SSH_KEY: ${{ secrets.SSH_GH_PUBLISH_KEY }}
+  #         SSH_USER: ${{ secrets.SSH_GH_PUBLISH_USER }}
