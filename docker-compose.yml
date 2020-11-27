@@ -8,4 +8,5 @@ services:
     container_name: cv
     command: jekyll serve --livereload
     volumes:
-      - ./:/srv/jekyll
+      - ./src:/srv/jekyll
+      - ./build:/build

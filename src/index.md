@@ -26,12 +26,12 @@ small companies, I would like to gain experience in a larger enterprise or
 perhaps in a fast moving environment such as in a startup.
 
 I see myself as a creative person, both in the sense of finding elegant
-solutions for problems as well as enjoying creating something from scratch. I
+solutions for problems, as well as enjoying creating something from scratch. I
 enjoy the process of laying out the strategy, planning and executing a project.
 
 I live for creation, when I am not at my keyboard, you'll find me building
 something physical, with tools in hand. But don't worry I also take my responsibilty
-maintaining your existing (legacy) projects, with almost the same enthusiasm.
+maintaining your existing - (legacy) projects, with almost the same enthusiasm.
 
 ---
 
@@ -191,9 +191,9 @@ Maintenance and modifications of radar systems for marine vessels.
 This professional education consists of 2 years of electronics engineering
 education followed by a specialisation in the fields of telematics which is at
 the cross-roads between IT and Telecommunication. In concrete terms this means
-anything that is an electronic form of communication: computer networking,
-Telephony, GSM, television, satellite connections, fiber connections, wireless
-communication, etc.
+any form of electronic communication: computer networking, Telephony, GSM,
+television, satellite connections, fiber connections, wireless communication,
+etc.
 
 ---
 
