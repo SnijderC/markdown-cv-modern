@@ -11,13 +11,13 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build CV site
         run: jekyll build -d ./build
+        env:
+          JEKYLL_ROOTLESS: yes
       - name: Upload build dir
         uses: actions/upload-artifact@v1
         with:
           name: build
           path: build
-        env:
-          JEKYLL_ROOTLESS: yes
 
   # htmltopdf:
   #   needs: build
