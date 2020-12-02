@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     container: jekyll/jekyll:4
     env:
-      JEKYLL_ROOTLESS: yes
+      JEKYLL_ROOTLESS: "yes"
       TEST_VAR: FOOBAR
     steps:
       - uses: actions/checkout@v2
