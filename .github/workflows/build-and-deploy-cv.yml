@@ -7,13 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: jekyll/jekyll:4
-    env:
-          JEKYLL_ROOTLESS: yes
     steps:
       - uses: actions/checkout@v2
       - name: Build CV site
-        run: jekyll build -d ./build
-
+        run: id jekyll
+        env:
+          JEKYLL_ROOTLESS: yes
       - name: Upload build dir
         uses: actions/upload-artifact@v1
         with:
