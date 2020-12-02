@@ -15,7 +15,7 @@ services:
       - JEKYLL_ROOTLESS=${JEKYLL_ROOTLESS}
   cv-build:
     image: jekyll/jekyll:4
-    command: jekyll build -d ./build
+    command: bash -c "id jekyll; echo $JEKYLL_ROOTLESS; jekyll build -d ./build"
     volumes:
       - ./:/srv/jekyll
       - ./build:/build
