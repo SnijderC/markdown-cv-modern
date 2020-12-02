@@ -1,10 +1,10 @@
 .PHONY: build
 build:
-	docker-compose run cv jekyll build -d ./build
+	docker-compose run cv-build
 
 .PHONY: serve
 serve:
-	docker-compose up
+	docker-compose up cv-serve
 
 .PHONY: clean
 clean:

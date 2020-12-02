@@ -1,12 +1,21 @@
 version: "3.7"
 services:
-  cv:
+  cv-serve:
     image: jekyll/jekyll:4
     ports:
     - 4000:4000
     - 35729:35729
     container_name: cv
     command: jekyll serve --livereload
+    volumes:
+      - ./:/srv/jekyll
+      - ./build:/build
+    environment:
+      # Make an .env file with JEKYLL_ROOTLESS=yes if you use rootless docker.
+      - JEKYLL_ROOTLESS=${JEKYLL_ROOTLESS}
+  cv-build:
+    image: jekyll/jekyll:4
+    command: jekyll build -d ./build
     volumes:
       - ./:/srv/jekyll
       - ./build:/build
