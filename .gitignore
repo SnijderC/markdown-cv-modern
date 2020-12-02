@@ -1,5 +1,3 @@
 .sass-cache/
 .jekyll-cache
-build/.env
 build/
-.env
