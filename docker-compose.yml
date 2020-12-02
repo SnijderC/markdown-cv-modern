@@ -8,5 +8,8 @@ services:
     container_name: cv
     command: jekyll serve --livereload
     volumes:
-      - ./src:/srv/jekyll
+      - ./:/srv/jekyll
       - ./build:/build
+    environment:
+      # Make an .env file with JEKYLL_ROOTLESS=yes if you use rootless docker.
+      - JEKYLL_ROOTLESS=${JEKYLL_ROOTLESS}

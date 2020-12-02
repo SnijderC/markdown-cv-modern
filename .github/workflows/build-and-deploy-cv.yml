@@ -10,12 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build CV site
-        run: jekyll build -s src
+        run: jekyll build -d ./build
       - name: Upload build dir
         uses: actions/upload-artifact@v1
         with:
           name: build
-          path: _site
+          path: build
+        env:
+          JEKYLL_ROOTLESS: yes
 
   # htmltopdf:
   #   needs: build

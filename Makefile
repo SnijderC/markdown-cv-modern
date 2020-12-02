@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-	docker-compose run cv jekyll build -d /build
+	docker-compose run cv jekyll build -d ./build
 
 .PHONY: serve
 serve:
@@ -8,4 +8,4 @@ serve:
 
 .PHONY: clean
 clean:
-	rm -rf ./build/*
+	rm -rf ./build/* .jekyll-cache _site
