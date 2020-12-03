@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build CV site
-        run: sudo make build
+        run: make build
       - name: Upload build dir
         uses: actions/upload-artifact@v1
         with:
