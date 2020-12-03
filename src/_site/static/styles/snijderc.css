@@ -1,0 +1,121 @@
+@font-face { font-family: "rubik-light"; src: url("/static/fonts/rubik-light.woff2") format("woff2"); font-style: normal; font-weight: 100; }
+
+@font-face { font-family: "rubik-regular"; src: url("/static/fonts/rubik-regular.woff2") format("woff2"); font-style: normal; font-weight: 300; }
+
+@font-face { font-family: "rubik-bold"; src: url("/static/fonts/rubik-bold.woff2") format("woff2"); font-style: normal; font-weight: 500; }
+
+html { --bg: #f8f8f2; --fg1: #272822; --fg2: #272822; --fg3: #272822; --fg4: #272822; --fg5: #272822; --fg6: #960050; --sel-bg: var(--fg6); --sel-fg: var(--bg); font-family: "rubik-regular"; font-size: 12pt; }
+
+html * { transition: color 0.5s ease-in-out; transition: background-color 0.5s ease-in-out; }
+
+html:target { --bg: #272822; --fg1: #f8f8f2; --fg2: #f92672; --fg3: #e6db74; --fg4: #960050; --fg5: #a6e22e; --fg6: #66d9ef; --sel-bg: var(--fg5); --sel-fg: var(--bg); }
+
+html:target nav { background-color: var(--bg); }
+
+html:target nav a[href$="-dark"] { display: none; }
+
+html:target nav a[href$="-light"] { display: inline-block !important; }
+
+html nav { position: fixed; background-color: var(--fg1); right: 0; border-radius: 0 0 0 .5rem; padding: .5rem; }
+
+html nav a { padding-top: 5px; }
+
+html nav a[href^="#toggle-"] { padding-top: 0; }
+
+html nav a { display: inline-block; width: 2rem; height: 2rem; padding: 0.4rem; }
+
+html nav a svg { color: #f8f8f2; }
+
+html nav a[href$="-dark"] svg { color: #e6db74; }
+
+html nav a[href$="-light"] { display: none; }
+
+/* Print also shares the same styles as the under 1000px layout */
+@media print { body { border-top: none; } html, html:target { --bg: #f8f8f2; --fg1: #272822; --fg2: #272822; --fg3: #272822; --fg4: #272822; --fg5: #272822; --fg6: #272822; } html a, html:target a { text-decoration: none; } a[href$=".pdf"], a[href^="#toggle-"] { display: none; } }
+
+@media screen { a[href$="//cv.chrissnijder.nl"] { display: none; } }
+
+@page { size: auto;
+  margin: 10mm; }
+
+body { color: var(--fg1); font-weight: normal; margin: 0 auto; background: var(--bg); }
+
+body a { color: var(--fg6); }
+
+body a:visited { color: var(--fg4); }
+
+body h1, body h3 { color: var(--fg2); }
+
+body h2 { color: var(--fg5); }
+
+body ::selection { color: var(--sel-fg); background: var(--sel-bg); }
+
+main { position: relative; padding: 2rem 4rem; display: grid; grid-template: max-content/9rem 15rem 1fr 23rem; grid-auto-flow: row; column-gap: 2.4rem; row-gap: 1rem; place-content: start; align-items: start; width: auto; }
+
+main > h1:nth-of-type(1) { grid-column: 1 / 4; grid-row: 1 / 2; }
+
+main > h2:nth-of-type(1) { grid-column: 1 / 4; grid-row: 2 / 3; }
+
+main > blockquote:nth-of-type(1) { grid-column: 4 / 5; grid-row: 1 / 3; margin: 0; justify-self: end; text-align: right; }
+
+main > blockquote:nth-of-type(1) ul { list-style: none; }
+
+main > blockquote:nth-of-type(1) ul li { line-height: 1.5rem; }
+
+main > hr:nth-of-type(1) { margin-top: 3rem; }
+
+main > h3 { grid-column: 1 / 2; justify-self: end; padding-top: 0; text-align: right; }
+
+main > h4 { grid-column: 2 / 5; }
+
+main > h5 { grid-column: 2 / 5; }
+
+main > * { grid-column: 2 / 5; }
+
+@media only screen and (min-width: 980px) { main { width: 55rem; margin: auto; } }
+
+main hr { display: block; position: relative; border: none; width: 100%; border-top: 1px solid #ccc; page-break-after: avoid; grid-column: 1 / 5; }
+
+main h1, main h2, main h3, main h4, main h5 { margin: 0; padding: 0; }
+
+main h1 { font-size: 220%; font-weight: bold; }
+
+main h2 { font-size: 160%; font-style: italic; font-weight: normal; }
+
+main h3 { font-size: 150%; font-weight: normal; }
+
+main h3 + ul, main h3 + p + ul { column-gap: 2rem; column-fill: auto; margin-top: 0.5rem; columns: 3; }
+
+main h3 + ul li, main h3 + p + ul li { margin: 0 0 0.5rem 0; }
+
+main h3 + ul li em, main h3 + p + ul li em { float: right; font-style: normal; }
+
+main h3 + ul { columns: 2; column-gap: 8rem; }
+
+main h3 + ul em { color: var(--fg3); }
+
+main h4 { font-size: 120%; font-weight: bold; margin: 0.3rem 0 0 0; }
+
+main h4 em { font-weight: lighter; font-style: italic; margin-right: 1rem; }
+
+main h5 { font-size: 120%; font-weight: bold; margin-left: 1rem; }
+
+main h5 ~ dl { margin: 0 0 0 1.5rem; }
+
+main h5 ~ dl dt { font-weight: bold; font-style: italic; }
+
+main h5 ~ dl dd { margin: 1rem 0 1rem 2rem; line-height: 1.4rem; }
+
+main h3 + ul, main h3 + p + ul { list-style: none; }
+
+main p, main ul { margin: 0 0 0 1.5rem; line-height: 1.5rem; }
+
+main ul { padding-left: 1rem; list-style: square; }
+
+main ul li { margin: 0; padding: 0; }
+
+main ul li p { margin: 1em 0.5em; line-height: 120%; }
+
+#hobbies + ul { columns: 3; }
+
+/*# sourceMappingURL=snijderc.css.map */

@@ -1,6 +1,7 @@
 ---
 layout: cv
 title: Chris Snijder's CV
+filename: chris-snijder-cv
 ---
 
 # Chris Snijder
@@ -12,64 +13,96 @@ title: Chris Snijder's CV
 > - <a href="mailto:jobs@chrissnijder.nl">jobs@chrissnijder.nl</a>
 > - [F129 A2D8 E58A 1F4E D623](static/public-key-chrissnijder.asc)
 > - [github.com/SnijderC](https://github.com/SnijderC)
+> - [https://cv.chrissnijder.nl](https://cv.chrissnijder.nl)
 
 ---
 
 ### Readme
 
+As a creative problem solver, it does not really matter to me what kind of
+problem you're trying to solve, or in what field, as long as it's intruiging
+and as long as I can use my creativity to find elegant solutions to them. Like
+most developers, I enjoy greenfield projects, creating something from scratch,
+but I also take my responsibilty maintaining or migrating existing projects,
+with _almost_ the same enthusiasm.
+
 In my free time I try to keep my knowledge up-to-date by working on side
 projects, I like to work with cutting edge technologies and push the boundries.
-I would like to apply this knowlegde in my future position.
+I would like to apply and expand this knowlegde in a future position.
 
-I would also like to change the environment I work in, as I've only worked in
-small companies, I would like to gain experience in a larger enterprise or
-perhaps in a fast moving environment such as in a startup.
+I enjoy the process of laying out the strategy, planning and executing a
+project and have proven to be capable of building entire applications from the
+ground up, front- and backend, and integrating it with complex systems and APIs.
 
-I see myself as a creative person, both in the sense of finding elegant
-solutions for problems, as well as enjoying creating something from scratch. I
-enjoy the process of laying out the strategy, planning and executing a project.
-
-I live for creation, when I am not at my keyboard, you'll find me building
-something physical, with tools in hand. But don't worry I also take my responsibilty
-maintaining your existing - (legacy) projects, with almost the same enthusiasm.
+I would like a change of environment, as I've only worked in small companies, I
+would like to gain experience in a larger enterprise or perhaps in a fast moving
+environment such as in a startup/scaleup.
 
 ---
 
-### Skills
+### Backend Skills
 
-- Python
-- PHP
-- Ruby
-- C++
-- Django
-- FastAPI
-- GraphQL
-- SQL
-- CSS
-- React
-- VueJs
-- JavaScript
-- TypeScript
-- Sass/Less
-- Webpack
-- Snowpack
-- Wireframing
-- Docker
-- Git
-- CI/CD
-- TDD
-- PGP
-- PKI
-- Embedded
+- Python _★★★★★_
+- Django _★★★★★_
+- FastAPI _★★★☆☆_
+- PHP _★★★★★_
+- Ruby _★★★☆☆_
+- C++ _★★★☆☆_
+- GraphQL _★★★☆☆_
+- SQL _★★★★★_
+- Redis _★★★★☆_
+
+### Frontend Skills
+
+- React _★★★★☆_
+- VueJs _★★★★☆_
+- TypeScript _★★★☆☆_
+- GraphQL _★★★☆☆_
+- CSS (3) _★★★★★_
+- Sass/Less _★★★★★_
+- Snowpack _★★★★☆_
+- Webpack _★★★★☆_
+- Wireframing _★★★★☆_
+- JavaScript (ES6) _★★★★★_
+
+### Other Skills
+
+- Git _★★★★☆_
+- TDD _★★★★☆_
+- CI/CD _★★★★☆_
+- Docker _★★★★☆_
+- PKI _★★★★☆_
+- Embedded development _★★☆☆☆_
 
 ---
 
-### Interests
+### Professional Interests
+
+I'm excited about these technologies and paradigms and look forward to working
+(more) with.
+
+- Functional programming
+- Reactive frameworks
+- Type safety
+- Multi cloud
+- Microservices
+- Kubernetes
+- Event driven computing
+- Asynchronous computing
+- HTTP/2 PUSH
+- Websockets
+
+---
+
+### Other Interests
+
+Some topics I'm passionate about.
 
 - Security
 - Privacy
 - Human Rights
 - Open Source
+- Linux
 
 ---
 
@@ -159,23 +192,27 @@ both internal and external use. Among those I implemented:
   interface based on Bootstrap.
 
 #### _2008 -- 2009_ System administrator
+
 ##### 2ml IT Solutions
 
 Network and systemadministration of Windows, Mac and Linux networks for
 multimedia organisations, mostly television and advertising.
 
 #### _2006 -- 2008_ Service engineer / system administrator
+
 ##### CARD Services B.V.
 
 On-site repairs to Apple computers and system administration mostly for multimedia companies.
 
 #### _2005 -- 2006_ Intern
+
 ##### CARD Services B.V.
 
 I did a project assignment on improving and shortening business workflows. And
 in the role of service engineer I did repairs to Apple computers.
 
 #### _2005 -- 2005_ Intern
+
 ##### Royal Navy div. Radar
 
 Maintenance and modifications of radar systems for marine vessels.
@@ -204,4 +241,3 @@ etc.
 - DIY & woodworking
 
 ---
-

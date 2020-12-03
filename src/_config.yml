@@ -4,8 +4,3 @@ sass:
     sass_dir: static/styles/_sass
 plugins:
   - jemoji
-exclude:
-  - README.md
-  - LICENSE
-  - docker-compose.yml
-  - Makefile

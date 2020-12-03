@@ -10,15 +10,133 @@ $level3-headings: 15rem;
 $contact-details: 23rem;
 
 html {
+  --bg: #f8f8f2;
+  --fg1: #272822;
+  --fg2: #272822;
+  --fg3: #272822;
+  --fg4: #272822;
+  --fg5: #272822;
+  --fg6: #960050;
+  --sel-bg: var(--fg6);
+  --sel-fg: var(--bg);
   font-family: "rubik-regular";
   font-size: 12pt;
+  * {
+    transition: color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+  }
+  &:target {
+    --bg: #272822;
+    --fg1: #f8f8f2;
+    --fg2: #f92672;
+    --fg3: #e6db74;
+    --fg4: #960050;
+    --fg5: #a6e22e;
+    --fg6: #66d9ef;
+    --sel-bg: var(--fg5);
+    --sel-fg: var(--bg);
+
+    nav {
+      background-color: var(--bg);
+
+      a[href$="-dark"] {
+        display: none;
+      }
+      a[href$="-light"] {
+        display: inline-block !important;
+      }
+    }
+  }
+  nav {
+    position: fixed;
+    background-color: var(--fg1);
+    right: 0;
+    border-radius: 0 0 0 .5rem;
+    padding: .5rem;
+    a {
+      padding-top: 5px;
+    }
+    a[href^="#toggle-"] {
+      padding-top: 0;
+    }
+    a {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      padding: 0.4rem;
+      svg {
+        color: #f8f8f2;
+      }
+    }
+    a[href$="-dark"] {
+      svg {
+        color: #e6db74;
+      }
+    }
+    a[href$="-light"] {
+      display: none;
+    }
+  }
+}
+
+/* Print also shares the same styles as the under 1000px layout */
+@media print {
+  body {
+    border-top: none;
+  }
+  html,
+  html:target {
+    --bg: #f8f8f2;
+    --fg1: #272822;
+    --fg2: #272822;
+    --fg3: #272822;
+    --fg4: #272822;
+    --fg5: #272822;
+    --fg6: #272822;
+    a {
+      text-decoration: none;
+    }
+  }
+  a[href$=".pdf"],
+  a[href^="#toggle-"] {
+    display: none;
+  }
+}
+
+@media screen {
+  a[href$="//cv.chrissnijder.nl"]
+  {
+    display: none;
+  }
+}
+
+@page {
+  size: auto;
+  margin: 10mm;
 }
 
 body {
-  color: #333;
+  color: var(--fg1);
   font-weight: normal;
   margin: 0 auto;
-  background: #fff;
+  background: var(--bg);
+  a {
+    color: var(--fg6);
+    &:visited {
+      color: var(--fg4);
+    }
+  }
+  h1,
+  h3 {
+    color: var(--fg2);
+  }
+  h2 {
+    color: var(--fg5);
+  }
+  ::selection {
+    color: var(--sel-fg);
+    background: var(--sel-bg);
+  }
 }
 
 main {
@@ -108,14 +226,26 @@ main {
   h3 {
     font-size: 150%;
     font-weight: normal;
-    + ul {
-      columns: 4;
-      column-gap: 1rem;
+    + ul,
+    + p + ul {
+      column-gap: 2rem;
       column-fill: auto;
       margin-top: 0.5rem;
-
+      columns: 3;
       li {
         margin: 0 0 0.5rem 0;
+        em {
+          float: right;
+          font-style: normal;
+        }
+      }
+    }
+    // Skills list
+    + ul {
+      columns: 2;
+      column-gap: 8rem;
+      em {
+        color: var(--fg3);
       }
     }
   }
@@ -146,7 +276,8 @@ main {
       }
     }
   }
-  h3 + ul {
+  h3 + ul,
+  h3 + p + ul {
     list-style: none;
   }
   p,
@@ -171,20 +302,4 @@ main {
 // Deviations from the format
 #hobbies + ul {
   columns: 3;
-}
-
-/* Print also shares the same styles as the under 1000px layout */
-@media print {
-  body {
-    border-top: none;
-  }
-  a {
-    text-decoration: none;
-    color: $text-color;
-  }
-}
-
-@page {
-  size: auto;
-  margin: 10mm;
 }
