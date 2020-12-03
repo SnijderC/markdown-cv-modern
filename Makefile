@@ -1,8 +1,9 @@
 .PHONY: build
 build:
+	mkdir -p ./build/static/files
 	docker-compose build cv-build
 	docker-compose run cv-build
-	mkdir build/static/files
+	chown -R $(whoami):$(whoami) ./build
 	yarn --cwd ./pdfprint install
 	yarn --cwd ./pdfprint run start
 
