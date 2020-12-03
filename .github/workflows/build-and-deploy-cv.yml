@@ -26,8 +26,6 @@ jobs:
           name: build
           path: build/
       - name: Deploy CV site
-        with:
-          name: build
         run: ./deploy.sh
         env:
           SSH_KEY: ${{ secrets.SSH_GH_PUBLISH_KEY }}
