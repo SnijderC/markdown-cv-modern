@@ -15,3 +15,7 @@ serve:
 .PHONY: clean
 clean:
 	rm -rf ./build/* .jekyll-cache _site
+
+.PHONY: publish
+publish:
+	bash deploy.sh

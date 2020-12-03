@@ -1,32 +1,32 @@
-name: Build, convert to PDF and deploy both to website
-on:
-  push:
-    branches:
-      - main
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Build CV site
-        run: make build
-      - name: Upload build dir
-        uses: actions/upload-artifact@v1
-        with:
-          name: build
-          path: build
+# name: Build, convert to PDF and deploy both to website
+# on:
+#   push:
+#     branches:
+#       - main
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Build CV site
+#         run: make build
+#       - name: Upload build dir
+#         uses: actions/upload-artifact@v1
+#         with:
+#           name: build
+#           path: build
 
-  rsync:
-    runs-on: ubuntu-latest
-    needs:
-      - build
-    steps:
-      - uses: actions/download-artifact@master
-        with:
-          name: build
-          path: build/
-      - name: Deploy CV site
-        run: ./deploy.sh
-        env:
-          SSH_KEY: ${{ secrets.SSH_GH_PUBLISH_KEY }}
-          SSH_USER: ${{ secrets.SSH_GH_PUBLISH_USER }}
+#   rsync:
+#     runs-on: ubuntu-latest
+#     needs:
+#       - build
+#     steps:
+#       - uses: actions/download-artifact@master
+#         with:
+#           name: build
+#           path: build/
+#       - name: Deploy CV site
+#         run: ./deploy.sh
+#         env:
+#           SSH_KEY: ${{ secrets.SSH_GH_PUBLISH_KEY }}
+#           SSH_USER: ${{ secrets.SSH_GH_PUBLISH_USER }}

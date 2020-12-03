@@ -51,8 +51,8 @@ html {
     position: fixed;
     background-color: var(--fg1);
     right: 0;
-    border-radius: 0 0 0 .5rem;
-    padding: .5rem;
+    border-radius: 0 0 0 0.5rem;
+    padding: 0.5rem;
     a {
       padding-top: 5px;
     }
@@ -100,6 +100,21 @@ html {
   a[href$=".pdf"],
   a[href^="#toggle-"] {
     display: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    page-break-after: avoid;
+  }
+  p,
+  ul,
+  dl {
+    page-break-inside: avoid;
+  }
+  hr {
+    page-break-after: auto;
   }
 }
 
