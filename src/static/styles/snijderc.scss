@@ -4,8 +4,8 @@
 @import "fonts";
 
 $text-color: #333;
-$page-width: 55rem;
-$aside-width-left: 9rem;
+$page-width: 58rem;
+$aside-width-left: 13rem;
 $level3-headings: 15rem;
 $contact-details: 23rem;
 
@@ -101,21 +101,6 @@ html {
   a[href^="#toggle-"] {
     display: none;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    page-break-after: avoid;
-  }
-  p,
-  ul,
-  dl {
-    page-break-inside: avoid;
-  }
-  hr {
-    page-break-after: auto;
-  }
 }
 
 @media screen {
@@ -161,7 +146,7 @@ main {
   grid-template: max-content / $aside-width-left $level3-headings 1fr $contact-details;
   grid-auto-flow: row;
   column-gap: 2.4rem;
-  row-gap: 1rem;
+  row-gap: 1.5rem;
   place-content: start;
   align-items: start;
   > h1:nth-of-type(1) {
@@ -186,7 +171,7 @@ main {
     }
   }
   > hr:nth-of-type(1) {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
   }
   > h3 {
     grid-column: 1 / 2;
@@ -214,9 +199,9 @@ main {
     position: relative;
     border: none;
     width: 100%;
-    border-top: 1px solid #ccc;
-    page-break-after: avoid;
+    border-top: 1px solid var(--fg1);
     grid-column: 1 / 5;
+    margin: 1.1rem 0;
   }
   h1,
   h2,
@@ -239,16 +224,19 @@ main {
   }
 
   h3 {
-    font-size: 150%;
+    font-size: 120%;
     font-weight: normal;
     + ul,
     + p + ul {
-      column-gap: 2rem;
-      column-fill: auto;
-      margin-top: 0.5rem;
-      columns: 3;
+      display: flex;
+      flex-direction: row;
+      flex-flow: wrap;
+      justify-content: start;
+      gap: 1rem;
+      padding: 0;
       li {
-        margin: 0 0 0.5rem 0;
+        flex: 0 0 13rem;
+        margin: 0;
         em {
           float: right;
           font-style: normal;
@@ -257,8 +245,14 @@ main {
     }
     // Skills list
     + ul {
-      columns: 2;
-      column-gap: 8rem;
+      display: flex;
+      flex-direction: row;
+      flex-flow: wrap;
+      justify-content: start;
+      gap: .6rem 3rem;
+      li {
+        flex: 0 0 18rem;
+      }
       em {
         color: var(--fg3);
       }
@@ -288,6 +282,20 @@ main {
       dd {
         margin: 1rem 0 1rem 2rem;
         line-height: 1.4rem;
+        ul {
+          margin: 1.5rem 0;
+          list-style: none;
+          padding: 0;
+          font-weight: bold;
+          display: flex;
+          flex-direction: row;
+          flex-flow: wrap;
+          justify-content: start;
+          gap: .6rem 2.2rem;
+          li {
+            flex: 0 0 8rem;
+          }
+        }
       }
     }
   }
@@ -308,7 +316,7 @@ main {
       padding: 0;
       p {
         margin: 1em 0.5em;
-        line-height: 120%;
+        line-height: 110%;
       }
     }
   }
@@ -316,5 +324,13 @@ main {
 
 // Deviations from the format
 #hobbies + ul {
-  columns: 3;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: start;
+  gap: .6rem 2.2rem;
+  li {
+    flex: 0 0 12rem;
+  }
 }

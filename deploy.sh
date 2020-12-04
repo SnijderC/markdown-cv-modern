@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -eu
 
-eval $(ssh-agent -s)
+SSH_USER=webmaster_chrissnijder_nl
+
+# eval $(ssh-agent -s)
 # ssh-add <(echo "$SSH_KEY")
 
 sshHost="${SSH_USER}@shell.greenhost.nl"
@@ -16,4 +18,4 @@ targetPath="/domains/chrissnijder.nl/cv/"
 # chmod 600 ~/.ssh/key
 
 # Do deployment
-rsync -avzr --delete -e 'ssh -i ~/.ssh/key' ./build/ ${sshHost}:${targetPath}
+rsync -avzr --delete -e ssh ./build/ ${sshHost}:${targetPath}
