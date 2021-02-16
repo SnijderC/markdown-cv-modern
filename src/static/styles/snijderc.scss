@@ -4,10 +4,10 @@
 @import "fonts";
 
 $text-color: #333;
-$page-width: 58rem;
-$aside-width-left: 13rem;
+$page-width: 57rem;
+$aside-width-left: 12.5rem;
 $level3-headings: 15rem;
-$contact-details: 23rem;
+$contact-details: 24.5rem;
 
 html {
   --bg: #f8f8f2;
@@ -19,8 +19,8 @@ html {
   --fg6: #960050;
   --sel-bg: var(--fg6);
   --sel-fg: var(--bg);
-  font-family: "rubik-regular";
   font-size: 12pt;
+  font-family: "rubik-regular";
   * {
     transition: color 0.5s ease-in-out;
     transition: background-color 0.5s ease-in-out;
@@ -38,7 +38,6 @@ html {
 
     nav {
       background-color: var(--bg);
-
       a[href$="-dark"] {
         display: none;
       }
@@ -49,6 +48,7 @@ html {
   }
   nav {
     position: fixed;
+    z-index: 900;
     background-color: var(--fg1);
     right: 0;
     border-radius: 0 0 0 0.5rem;
@@ -112,7 +112,7 @@ html {
 
 @page {
   size: auto;
-  margin: 10mm;
+  margin: 20mm;
 }
 
 body {
@@ -120,6 +120,12 @@ body {
   font-weight: normal;
   margin: 0 auto;
   background: var(--bg);
+  z-index: 100;
+  p,
+  a,
+  ul {
+    font-size: 1rem;
+  }
   a {
     color: var(--fg6);
     &:visited {
@@ -145,7 +151,7 @@ main {
   display: grid;
   grid-template: max-content / $aside-width-left $level3-headings 1fr $contact-details;
   grid-auto-flow: row;
-  column-gap: 2.4rem;
+  column-gap: 2rem;
   row-gap: 1.5rem;
   place-content: start;
   align-items: start;
@@ -170,9 +176,6 @@ main {
       }
     }
   }
-  > hr:nth-of-type(1) {
-    margin-top: 1.5rem;
-  }
   > h3 {
     grid-column: 1 / 2;
     justify-self: end;
@@ -190,6 +193,8 @@ main {
   }
 
   width: auto;
+  padding: 1rem;
+  max-width: calc(1vw -2rem);
   @media only screen and (min-width: 980px) {
     width: $page-width;
     margin: auto;
@@ -201,7 +206,7 @@ main {
     width: 100%;
     border-top: 1px solid var(--fg1);
     grid-column: 1 / 5;
-    margin: 1.1rem 0;
+    margin: 0.6rem 0;
   }
   h1,
   h2,
@@ -249,9 +254,13 @@ main {
       flex-direction: row;
       flex-flow: wrap;
       justify-content: start;
-      gap: .6rem 3rem;
+      // Not widely supported yet
+      // gap: .6rem 3rem;
       li {
         flex: 0 0 18rem;
+        &:nth-child(odd) {
+          margin-right: 3rem;
+        }
       }
       em {
         color: var(--fg3);
@@ -262,7 +271,7 @@ main {
   h4 {
     font-size: 120%;
     font-weight: bold;
-    margin: 0.3rem 0 0 0;
+    margin: 0.2rem 0;
     em {
       font-weight: lighter;
       font-style: italic;
@@ -274,8 +283,12 @@ main {
     font-weight: bold;
     margin-left: 1rem;
     ~ dl {
-      margin: 0 0 0 1.5rem;
+      margin-left: 1.5rem;
       dt {
+        margin-top: 2.5rem;
+        &:nth-of-type(1) {
+          margin-top: 0;
+        }
         font-weight: bold;
         font-style: italic;
       }
@@ -291,7 +304,7 @@ main {
           flex-direction: row;
           flex-flow: wrap;
           justify-content: start;
-          gap: .6rem 2.2rem;
+          gap: 0.6rem 2.2rem;
           li {
             flex: 0 0 8rem;
           }
@@ -303,9 +316,11 @@ main {
   h3 + p + ul {
     list-style: none;
   }
-  p,
-  ul {
+  ul,
+  p {
     margin: 0 0 0 1.5rem;
+  }
+  p {
     line-height: 1.5rem;
   }
   ul {
@@ -329,7 +344,7 @@ main {
   flex-direction: row;
   flex-flow: wrap;
   justify-content: start;
-  gap: .6rem 2.2rem;
+  gap: 0.6rem 2.2rem;
   li {
     flex: 0 0 12rem;
   }

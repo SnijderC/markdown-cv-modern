@@ -2,12 +2,16 @@
 <html id="toggle-dark">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' *.chrissnijder.nl"; object-src 'none'; require-trusted-types-for 'script';">
     <title>{% if page.title %} {{ page.title }} {% endif %}</title>
     <link
       href="static/styles/{{ site.style }}.css"
       type="text/css"
       rel="stylesheet"
     />
+    <script src="/static/scripts/tracking.js"></script>
+    <script src="https://matomo.chrissnijder.nl/matomo.js" async defer></script>
   </head>
   <body>
     <nav>

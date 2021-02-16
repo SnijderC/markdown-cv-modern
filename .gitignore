@@ -3,3 +3,4 @@
 build/
 node_modules
 _site
+src/static/scripts/tracking.js
