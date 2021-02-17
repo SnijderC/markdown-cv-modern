@@ -21,3 +21,4 @@ services:
     environment:
       # Make an .env file with JEKYLL_ROOTLESS=yes if you use rootless docker.
       - JEKYLL_ROOTLESS=${JEKYLL_ROOTLESS}
+      - MATOMO_URL=${MATOMO_URL}

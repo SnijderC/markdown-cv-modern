@@ -26,6 +26,7 @@ in the root of the project to disable `JEKYLL_ROOTLESS`.
 
 3. Edit `index.md` to contain your work experience, skill, contact info, etc.
 
+
 ## Generating output
 
 Clean up build files:

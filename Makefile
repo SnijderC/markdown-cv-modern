@@ -9,7 +9,6 @@ build:
 
 .PHONY: serve
 serve:
-	docker-compose build cv-serve
 	docker-compose up cv-serve
 
 .PHONY: clean

@@ -4,3 +4,4 @@ sass:
     sass_dir: static/styles/_sass
 plugins:
   - jemoji
+  - jekyll-environment-variables

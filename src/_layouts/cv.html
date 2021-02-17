@@ -10,8 +10,10 @@
       type="text/css"
       rel="stylesheet"
     />
+    {% if site.env.MATOMO_URL %}
+    <script src="{{site.env.MATOMO_URL}}" async defer></script>
     <script src="/static/scripts/tracking.js"></script>
-    <script src="https://matomo.chrissnijder.nl/matomo.js" async defer></script>
+    {% endif %}
   </head>
   <body>
     <nav>
